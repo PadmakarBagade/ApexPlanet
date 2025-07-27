@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Design</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2196F3;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        background-color: #e1f5fe;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Cards</h1>
+  <div class="container">
+    <div class="card">Mobile Friendly</div>
+    <div class="card">Tablet Optimized</div>
+    <div class="card">Desktop Ready</div>
+  </div>
+</body>
+</html>

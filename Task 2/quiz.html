@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f3e5f5, #e1bee7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .question-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      border: none;
+      background-color: #7e57c2;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #5e35b1;
+    }
+
+    #restartBtn {
+      background-color: #43a047;
+    }
+
+    #restartBtn:hover {
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <div class="question-box" id="quizBox">
+    <h2 id="question">Loading...</h2>
+    <p id="score"></p>
+    <button class="btn" onclick="answer('A')">Option A</button>
+    <button class="btn" onclick="answer('B')">Option B</button>
+    <p id="result"></p>
+    <button id="restartBtn" class="btn" onclick="restartQuiz()" style="display:none;">Restart</button>
+  </div>
+
+  <script>
+    const quiz = [
+      { question: "What is 2 + 2?", correct: "A", options: { A: "4", B: "5" } },
+      { question: "What is the capital of France?", correct: "B", options: { A: "Berlin", B: "Paris" } },
+      { question: "Which language runs in a web browser?", correct: "A", options: { A: "JavaScript", B: "Python" } },
+      { question: "What does CSS stand for?", correct: "B", options: { A: "Computer Style Sheet", B: "Cascading Style Sheets" } },
+      { question: "Which HTML tag is used to link a CSS file?", correct: "A", options: { A: "<link>", B: "<style>" } },
+      { question: "Which is a JavaScript framework?", correct: "B", options: { A: "Laravel", B: "React" } },
+      { question: "Which company developed JavaScript?", correct: "A", options: { A: "Netscape", B: "Microsoft" } }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = quiz[current];
+      document.getElementById("question").innerText = q.question;
+      const btns = document.querySelectorAll(".btn");
+      btns[0].innerText = q.options.A;
+      btns[1].innerText = q.options.B;
+      document.getElementById("score").innerText = `Score: ${score}/${quiz.length}`;
+    }
+
+    function answer(option) {
+      const correct = quiz[current].correct;
+      const result = document.getElementById("result");
+      if (option === correct) {
+        result.innerText = "✅ Correct!";
+        result.style.color = "green";
+        score++;
+      } else {
+        result.innerText = "❌ Wrong!";
+        result.style.color = "red";
+      }
+      current++;
+      if (current < quiz.length) {
+        setTimeout(() => {
+          result.innerText = "";
+          loadQuestion();
+        }, 1000);
+      } else {
+        document.getElementById("question").innerText = "🎉 Quiz Completed!";
+        document.getElementById("result").innerText = `Final Score: ${score}/${quiz.length}`;
+        document.querySelectorAll(".btn").forEach(btn => btn.style.display = "none");
+        document.getElementById("restartBtn").style.display = "inline-block";
+      }
+    }
+
+    function restartQuiz() {
+      current = 0;
+      score = 0;
+      document.getElementById("result").innerText = "";
+      document.querySelectorAll(".btn").forEach(btn => btn.style.display = "inline-block");
+      document.getElementById("restartBtn").style.display = "none";
+      loadQuestion();
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

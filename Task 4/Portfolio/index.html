@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padmakar Bharat Bagade | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="#about" class="logo">Padmakar Bharat Bagade</a>
+            <span class="subtitle">Computer Engineer</span>
+        </div>
+        <nav class="nav-bar">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section about">
+            <div class="about-container">
+                <div class="image-container">
+                    <img src="C:\Users\susha\OneDrive\Pictures\Saved Pictures\1.jpg" alt="Padmakar Bharat Bagade" class="profile-image">
+                </div>
+                <div class="content">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm a passionate web developer with a love for creating beautiful and functional websites. I enjoy building things from scratch and learning new technologies to improve my craft. In my free time, I like to explore hiking trails and read sci-fi novels.</p>
+                    <a href="#contact" class="btn">Let's Connect!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <h2>My Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3>Spotify Music Player</h3>
+                    <p> I created this music player using HTML, CSS, and JavaScript to bring the feel of Spotify right into the browser. It has a clean, responsive design, smooth controls for play, pause, and track progress, and an easy-to-use playlist interface. This project was a fun way to combine my love for music with my passion for coding, while sharpening my skills in frontend development and interactive web design.</p>
+                </div>
+                <div class="project-card">
+                    <h3>CineScope</h3>
+                    <p>A movie discovery web app designed to help users search, explore, and learn about films effortlessly. Built with a focus on a clean and modern UI, it includes features like a movie search bar, ratings display, and detailed overviews. CineScope makes it easy for movie lovers to find new titles and explore popular or trending films, while showcasing my skills in frontend development, API integration, and responsive design.
+
+</p>
+                </div>
+                <div class="project-card">
+                    <h3>Voice To Text Converter</h3>
+                    <p>A simple yet powerful web app built using HTML, CSS, and JavaScript that converts spoken words into written text in real-time. With a clean and responsive interface, it uses the browser’s speech recognition capabilities to capture voice input and display accurate text instantly. This project highlights my skills in JavaScript APIs, event handling, and user-friendly interface design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Get in Touch</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/padmakarbagade2005" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

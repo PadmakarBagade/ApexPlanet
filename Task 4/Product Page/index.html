@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Our Products</h1>
+        </header>
+
+        <div class="controls">
+            <div class="filter-options">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter">
+                    <option value="all">All</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="books">Books</option>
+                    <option value="clothing">Clothing</option>
+                </select>
+            </div>
+            
+            <div class="sort-options">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="rating-asc">Rating: Low to High</option>
+                    <option value="rating-desc">Rating: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="product-list" class="product-grid">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
